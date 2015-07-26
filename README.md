@@ -17,6 +17,20 @@ Relies on the Moq NuGet package.
 An example of a unit test that reads posted form data:
 
 ```C#
+// Controller code
+
+[HttpPost]
+public ActionResult ReceiveFormData()
+{
+    var name = Request.Form["Name"];
+    if (name == "Mock") return Content("Ok");
+
+    return Content("Not ok");
+}
+
+
+// Unit test
+
 [TestMethod]
 public void ReceiveFormData_action_returns_ok_when_passed_the_correct_name_in_form_data()
 {
@@ -38,6 +52,17 @@ public void ReceiveFormData_action_returns_ok_when_passed_the_correct_name_in_fo
 An example of a unit test that checks modifications to Session:
 
 ```C#
+// Controller code
+
+public ActionResult ModifySession()
+{
+    Session["IsModified"] = true;
+
+    return Content("Ok");
+}
+
+
+// Unit test
 [TestMethod]
 public void ModifySession_action_modifies_the_Session_object()
 {
