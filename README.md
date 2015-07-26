@@ -18,7 +18,6 @@ An example of a unit test that reads posted form data:
 
 ```C#
 // Controller code
-
 [HttpPost]
 public ActionResult ReceiveFormData()
 {
@@ -28,9 +27,7 @@ public ActionResult ReceiveFormData()
     return Content("Not ok");
 }
 
-
 // Unit test
-
 [TestMethod]
 public void ReceiveFormData_action_returns_ok_when_passed_the_correct_name_in_form_data()
 {
@@ -53,14 +50,12 @@ An example of a unit test that checks modifications to Session:
 
 ```C#
 // Controller code
-
 public ActionResult ModifySession()
 {
     Session["IsModified"] = true;
 
     return Content("Ok");
 }
-
 
 // Unit test
 [TestMethod]
