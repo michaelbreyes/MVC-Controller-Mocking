@@ -1,0 +1,16 @@
+*resharper.user
+# Visual Studio
+*.suo
+*.user
+bin
+obj
+ 
+# Resharper
+*[Rr]e[Ss]harper.user
+_ReSharper.*/
+
+# Packages
+packages/*
+
+# Test files
+TestResults/*
